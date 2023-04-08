@@ -1,0 +1,12 @@
+/* custom css */
+@charset "UTF-8";
+/* CSS Document */
+/* The body tag style applies to all elements on the page */
+body {
+    background: repeating-linear-gradient(45deg, lightblue, lightblue 15px, white 15px, white 30px, lightpink 30px, lightpink 45px); 
+    font-family: Verdana, Geneva, Arial, sans-serif;
+    padding:0px;
+    margin:0px;
+
+    
+}

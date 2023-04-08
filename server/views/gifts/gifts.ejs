@@ -1,0 +1,73 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+
+<style>
+    .btn-primary{
+        background-color:#207650;
+    }
+
+    .btn-danger{
+        background-color:#8A1A0F;
+    }
+</style>
+
+    <main class ="container">
+        <div class="row">
+        <div class="col-md-offset-3 col-md-12">
+        <h1>The Ultimate Wishlist</h1>
+        <% if(typeof displayName=='string' && displayName) { %>
+            <p>Add or Update your xmas gift wishlist!</p>
+            <a href="/gift-list/add" class="btn btn-danger" role="button">
+            <i class="fas fa-plus-circle"></i> Add Gift 
+        </a>
+        <br>
+        <% } %>
+        <br>
+        <table class= "table table-bordered table-striped table-dark table-hover">
+            <tr class="d-flex">
+            <% if(typeof displayName=='string' && displayName) { %>
+                <th class="text-center col-3">Gift Name</th>
+                <th class="text-center col-3">Retailer/Webstie</th>
+                <th class="text-center col-2">Price</th>
+                <th class="text-center col-2">Discounted Price</th>
+                <th class= "text-center col-1"></th>
+                <th class= "text-center col-1"></th>
+            <% } else { %>
+                <th class="text-center col-4">Gift Name</th>
+                <th class="text-center col-4">Retailer/Webstie</th>
+                <th class="text-center col-2">Price</th>
+                <th class="text-center col-2">Discounted Price</th>
+            <% } %>
+            
+            </tr>
+            <% for(let count=0; count<giftlist.length; count++) { %>
+                <tr class="d-flex">
+                <% if(typeof displayName=='string' && displayName) { %>
+                    <td class="text-center col-3"><%= giftlist[count].name %></td>
+                    <td class="text-center col-3"><%= giftlist[count].retailer %></td>
+                    <td class="text-center col-2"><%= giftlist[count].price %></td>
+                    <td class="text-center col-2"><%= giftlist[count].discount %></td>
+                    <td class="text-center col-1">
+                        <a href="/gift-list/edit/<%= giftlist[count].id %>"
+                            class="btn btn-success"
+                                <i class="fas fa-pencil-alt"></i> Edit </a>
+                    </td>
+                    <td class="text-center col-1">
+                        <a href="/gift-list/delete/<%= giftlist[count].id %>"
+                            class="btn btn-danger"
+                                <i class="fas fa-trash-alt"></i> Delete </a>
+                    </td>
+                <% } else { %>
+                    <td class="text-center col-4"><%= giftlist[count].name %></td>
+                    <td class="text-center col-4"><%= giftlist[count].retailer %></td>
+                    <td class="text-center col-2"><%= giftlist[count].price %></td>
+                    <td class="text-center col-2"><%= giftlist[count].discount %></td>
+                <% } %>
+                </tr>
+            <% } %>
+        </table>
+        </div>
+        </div>
+    </main>
+
+<%- include ../partials/footer.ejs %>

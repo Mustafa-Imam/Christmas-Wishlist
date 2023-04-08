@@ -1,0 +1,54 @@
+<!--NavBar -->
+<style>
+    .navbar-dark{
+        background:#207650;
+    }
+
+    .navbar-brand{
+        color:#8A1A0F;
+    }
+</style>
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/"><b>Gift Wish-List</b></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto"> 
+
+        <li class="nav-item">
+        <% if (title == "Home") { %>
+          <a class="nav-link active" href="/home">
+        <% } else { %>
+          <a class="nav-link" href="/home">
+        <% } %>
+          <i class="fa-solid fa-lg fa-house-user"></i> Home</a>
+        </li>
+
+        <li class="nav-item">
+        <% if (title == "Gift List") { %>
+          <a class="nav-link active" href="/gift-list">
+        <% } else { %>
+          <a class="nav-link" href="/gift-list">
+        <% } %>
+          <i class="fa-sharp fa-solid fa-gifts"></i>
+           Gift List</a>
+        </li>        
+
+      <% if(typeof displayName =='string' && displayName) { %>
+        <li class="navbar-text">
+        <i class="fas fa-lg fa-user"></i>
+        Welcome, <%= displayName %> </li>
+        <li class="nav-item">
+        <a href="/logout" class="nav-link">
+        <i class="fas fa-lg fa-sign-out-alt"></i>Logout</a></li>
+      <% } else { %> 
+        <li class="nav-item">
+        <a href="/login" class="nav-link">
+        <i class="fas fa-lg fa-sign-in-alt"></i>Login</a></li>
+      <% } %>
+
+    </div>
+  </div>
+</nav>

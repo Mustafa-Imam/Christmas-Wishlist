@@ -1,0 +1,51 @@
+body{
+    margin:0;
+    padding:0;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+
+
+}
+
+.main-image{
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.3)), url("Christmas-stockings.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-image .main-text{
+    color: white;
+    text-align: center;
+}
+
+.main-image .main-text h1{
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.main-image .main-text p{
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 100px;
+}
+
+.main-image .hero-btn{
+    text-decoration: none;
+    color: white;
+    background: black;
+    padding: 10px 30px;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.main-image .hero-btn:hover{
+    background: white;
+    color: black;
+}
+
