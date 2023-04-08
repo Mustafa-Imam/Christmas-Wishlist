@@ -5,7 +5,7 @@
  */
 
 var app = require('./server/config/app');
-var debug = require('debug')('finalproj1:server');
+var debug = require('debug')('christmas_wishlist:server');
 var http = require('http');
 
 /**
